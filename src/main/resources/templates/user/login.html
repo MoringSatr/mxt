@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:ht="http://www.w3.org/1999/xhtml" xmlns:h1="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>马戏团</title>
+    <link rel="canonical" href="http://"/>
+    <meta name='robots' content='noindex,follow'/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/login.js"></script>
+</head>
+<body>
+<input type="hidden" id="serverUrl" th:value="${serverUrl}">
+
+<!-- #page-login -->
+<div id="page-login" class="page">
+    <div class="header-container">
+        <header class="wrapper clearfix">
+            <h1 class="title">马戏团</h1>
+        </header>
+    </div>
+    <div class="main-container">
+        <div class="main wrapper clearfix">
+            <!--<article>-->
+            <!--<div id="start-icon">-->
+            <!--</div>-->
+            <!--</article>-->
+            <aside>
+                <hr/>
+                <div>
+                    <div id="login-bg">
+                        <div class="login-font-title">
+                            <h1 class="title">登录</h1>
+                        </div>
+                        <div class="login-font-body">
+                            <p>
+                            <div class="login_input">帐号<input type="text" name="login_input_name" id="login_input_name" class="login-input"
+                                                              placeholder="请输入账户名"/></div>
+                            </p>
+                            <p>
+                            <div class="login_input">密码<input type="password" name="login_input_passwd" id="login_input_passwd" class="login-input"
+                                                              placeholder="请输入密码"/></div>
+                            </p>
+                        </div>
+                        <div class="login-font-foot">
+                            <input type="button" id="login-openRegister" class="login-font-button login-font-button1 login-button" value="注 册">
+                            <input type="button" id="login-login" class="login-font-button login-font-button2 login-button" value="登 录">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <div class="page-health-notice">
+        <div>
+            健康游戏忠告
+        </div>
+        <div>
+            抵制不良游戏，拒绝盗版游戏。<br>
+            注意自我保护，谨防受骗上当。<br>
+            适度游戏益脑，沉迷游戏伤身。<br>
+            合理安排时间，享受健康生活。
+        </div>
+    </div>
+</div>
+
+<!-- tips panel -->
+<div id="panel-tips-parent"/>
+</body>
+</html>

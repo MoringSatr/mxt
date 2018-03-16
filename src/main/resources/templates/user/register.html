@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>马戏团</title>
+    <link rel="canonical" href="http://"/>
+    <meta name='robots' content='noindex,follow'/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/register.js"></script>
+</head>
+<body>
+<input type="hidden" id="serverUrl" th:value="${serverUrl}">
+<input type="hidden" id="accept" th:value="${accept}">
+
+<!-- #page-register -->
+<div id="page-register" class="page">
+    <div class="header-container">
+        <header class="wrapper clearfix">
+            <h1 class="title">马戏团</h1>
+        </header>
+    </div>
+    <div class="main-container">
+        <div class="main wrapper clearfix">
+            <!--<article>-->
+            <!--<div id="start-icon">-->
+            <!--</div>-->
+            <!--</article>-->
+            <aside>
+                <hr/>
+                <div>
+                    <div id="register-bg">
+                        <div class="register-font-title">
+                            <h1 class="title">注册</h1>
+                        </div>
+                        <div class="register-font-body">
+                            <p>
+                            <div class="register_input"> 帐 号 <input type="text" name="account" id="account" class="login-input" placeholder="用作登录用户名"/></div>
+                            </p>
+                            <p>
+                            <div class="register_input"> 密 码 <input type="password" name="passwd" id="passwd" class="login-input" placeholder="用作登录密码"/></div>
+                            </p>
+                            <p>
+                            <div class="register_input"> 姓 名 <input type="text" name="realname" id="realname" class="login-input" placeholder="真实姓名，必须是中文"/>
+                            </div>
+                            </p>
+                            <p>
+                            <div class="register_input">身份证<input type="text" name="ids" id="ids" class="login-input" placeholder="身份证号码"/></div>
+                            </p>
+                        </div>
+                        <div class="register-font-foot">
+                            <input type="button" id="btn-register" class="login-font-button login-font-button1 login-button" value="注 册">
+                            <input type="button" id="btn-register-cancel" class="login-font-button login-font-button1 login-button" value="取 消">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<!-- tips panel -->
+<div id="panel-tips-parent"/>
+</body>
+</html>

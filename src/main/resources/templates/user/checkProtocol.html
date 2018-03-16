@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>马戏团</title>
+    <link rel="canonical" href="http://"/>
+    <meta name='robots' content='noindex,follow'/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/checkProtocol.js"></script>
+</head>
+<body>
+<input type="hidden" id="serverUrl" th:value="${serverUrl}">
+
+<!-- #page-register-protocol -->
+<div id="page-register-protocol" class="page">
+    <div class="header-container">
+        <header class="wrapper clearfix">
+            <h1 class="title">马戏团</h1>
+        </header>
+    </div>
+    <div class="main-container">
+        <div class="main wrapper clearfix">
+            <!--<article>-->
+            <!--<div id="start-icon">-->
+            <!--</div>-->
+            <!--</article>-->
+            <aside>
+                <hr/>
+                <div>
+                    <div id="register-protocol-bg">
+                        <div class="login-font-title">
+                            <h1 class="title">注册协议</h1>
+                        </div>
+                        <div>
+                            <iframe src="/protocol/protocol.htm" class="protocol-font-body"></iframe>
+                        </div>
+                        <div class="protocol-font-foot">
+                            <input type="button" id="register-protocol-agree" class="login-font-button login-font-button2 login-button" value="接 受">
+                            <input type="button" id="register-protocol-cancel" class="login-font-button login-font-button1 login-button" value="取 消">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<!-- tips panel -->
+<div id="panel-tips-parent"/>
+</body>
+</html>
