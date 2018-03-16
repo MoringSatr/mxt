@@ -32,11 +32,11 @@ public class UserServiceImpl implements UserService {
         if (StringUtils.isBlank(password)) {
             return new ResultVo(ErrorCode.NOT_INPUT_PASSWORD);
         }
-        boolean checkUsername = CollectionUtils.isEmpty(this.userRepository.findAllByUsername(username));
-        if (checkUsername) {
+        boolean checkUsername = this.userRepository.checkUsername(username) == 1 ? true : false;
+        if (!checkUsername) {
             return new ResultVo(ErrorCode.NOT_REGISTE);
         }
-        boolean checkUsernameAndPassword = this.userRepository.findByUsernameAndPassword(username, password) != null;
+        boolean checkUsernameAndPassword = this.userRepository.checkUsernameAndPassword(username, password) == 1 ? true : false;
         if (!checkUsernameAndPassword) {
             return new ResultVo(ErrorCode.ERROR_PASSWORD);
         }
