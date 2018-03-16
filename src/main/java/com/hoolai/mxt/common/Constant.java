@@ -1,6 +1,7 @@
 package com.hoolai.mxt.common;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 /**
@@ -22,21 +23,18 @@ public class Constant {
 
     public static String GAME_URL;
 
-    static {
+    public static void load(String springProfiles) {
         try {
             Properties properties = new Properties();
-            loadPlatformProperties(properties);
+            loadPlatformProperties(properties, springProfiles);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static void loadPlatformProperties(Properties properties) throws IOException {
-        properties.load(Constant.class.getClassLoader().getResourceAsStream("constant_file.properties"));
-        String platformPath = properties.getProperty("platform_path");
-        properties.clear();
-        properties.load(Constant.class.getClassLoader().getResourceAsStream(platformPath));
-
+    private static void loadPlatformProperties(Properties properties, String springProfiles) throws IOException {
+        InputStream resourceAsStream = Constant.class.getClassLoader().getResourceAsStream("platform" + "-" + springProfiles + ".properties");
+        properties.load(resourceAsStream);
         RESOURCE_URL = properties.getProperty("resource_url");
         SERVER_URL = properties.getProperty("server_url");
         DISPATCH_URL = properties.getProperty("dispatch_url");
