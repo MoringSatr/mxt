@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
             return new ResultVo(ErrorCode.NOT_REGISTE);
         }
         boolean checkUsernameAndPassword = this.userRepository.findByUsernameAndPassword(username, password) != null;
-        if (checkUsernameAndPassword) {
+        if (!checkUsernameAndPassword) {
             return new ResultVo(ErrorCode.ERROR_PASSWORD);
         }
         result.put("gameUrl", Constant.GAME_URL);

@@ -1,9 +1,18 @@
 $(function () {
     var serverUrl = $("#serverUrl").val();
+
     //  登陆
     $("#login-login").click(function () {
         var username = $("#login_input_name").val();
         var password = $("#login_input_passwd").val();
+        if (username == "" || username == "undefined") {
+            showTips("请输入帐号");
+            return;
+        }
+        if (password == "" || password == "undefined") {
+            showTips("请输入密码");
+            return;
+        }
         password = md5(password).toUpperCase();
         $.ajax({
             type: "POST",

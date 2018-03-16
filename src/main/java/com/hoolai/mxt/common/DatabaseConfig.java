@@ -19,37 +19,35 @@ import java.util.Map;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactory", transactionManagerRef = "transactionManager", basePackages = {
-        "com.hoolai.mxt.repository" }) // 设置Repository所在位置
+@EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactoryPrimary", transactionManagerRef = "transactionManagerPrimary", basePackages = {
+        "com.hoolai.mxt.repository"}) // 设置Repository所在位置
 public class DatabaseConfig {
 
     @Autowired
-    @Qualifier("dataSource")
-    private DataSource dataSource;
+    @Qualifier("primaryDataSource")
+    private DataSource primaryDataSource;
 
     @Autowired
     private JpaProperties jpaProperties;
 
-    @Bean(name = "entityManager")
-    public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
-        return entityManagerFactory(builder).getObject().createEntityManager();
+    @Bean(name = "entityManagerPrimary")
+    public EntityManager entityManagerPrimary(EntityManagerFactoryBuilder builder) {
+        return entityManagerFactoryPrimary(builder).getObject().createEntityManager();
     }
 
-    @Bean(name = "entityManagerFactory")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder) {
-        return builder.dataSource(dataSource).properties(getVendorProperties(dataSource)).packages("com.hoolai.mxt.entity") // 设置实体类所在位置
-                .persistenceUnit("persistenceUnit").build();
+    @Bean(name = "entityManagerFactoryPrimary")
+    public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary(EntityManagerFactoryBuilder builder) {
+        return builder.dataSource(primaryDataSource).properties(getVendorProperties()).packages("com.hoolai.mxt.entity") // 设置实体类所在位置
+                .persistenceUnit("primaryPersistenceUnit").build();
     }
 
-    private Map<String, Object> getVendorProperties(DataSource dataSource) {
-        HibernateSettings hibernateSettings = new HibernateSettings();
-        hibernateSettings.ddlAuto("update");
-        return jpaProperties.getHibernateProperties(hibernateSettings);
+    private Map<String, Object> getVendorProperties() {
+        return jpaProperties.getHibernateProperties(new HibernateSettings());
     }
 
-    @Bean(name = "transactionManager")
-    public PlatformTransactionManager transactionManager(EntityManagerFactoryBuilder builder) {
-        return new JpaTransactionManager(entityManagerFactory(builder).getObject());
+    @Bean(name = "transactionManagerPrimary")
+    public PlatformTransactionManager transactionManagerPrimary(EntityManagerFactoryBuilder builder) {
+        return new JpaTransactionManager(entityManagerFactoryPrimary(builder).getObject());
     }
 
 }
