@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "user")
-public class UserEntity {
+public class User {
 
     @Id
     @GeneratedValue

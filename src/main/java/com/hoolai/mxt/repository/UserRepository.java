@@ -1,17 +1,18 @@
 package com.hoolai.mxt.repository;
 
-import com.hoolai.mxt.entity.UserEntity;
+import com.hoolai.mxt.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * @author liubowen
  * @date 2018/3/16 16:39
  * @description
  */
-@Component
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
-    UserEntity findByUsernameAndPassword(String username, String password);
+    List<User> findAllByUsername(String username);
 
+    User findByUsernameAndPassword(String username, String password);
 }

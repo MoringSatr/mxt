@@ -4,10 +4,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import com.hoolai.mxt.entity.UserEntity;
-import com.hoolai.mxt.repository.UserRepository;
 
 /**
  * @author liubowen
@@ -16,17 +15,14 @@ import com.hoolai.mxt.repository.UserRepository;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@EnableJpaRepositories(basePackages = "com.hoolai.mxt.repository")
 public class ApplicationText {
 
     @Autowired
-    private UserRepository userRepository;
+    private JdbcTemplate jdbcTemplate;
 
     @Test
     public void testSave() {
-        UserEntity userEntity = new UserEntity();
-        userEntity.setUsername("111");
-        userEntity.setPassword("111");
-        userRepository.saveAndFlush(userEntity);
-        System.err.println(userEntity);
+        jdbcTemplate.update("insert into USER(username, password) values(?, ?)", "1111", "2222");
     }
 }

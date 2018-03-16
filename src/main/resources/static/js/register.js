@@ -27,6 +27,7 @@ $(function () {
             showTips("请输入身份证");
             return;
         }
+        password = md5(password).toUpperCase();
         $.ajax({
             type: "POST",
             url: serverUrl + "user/register/",

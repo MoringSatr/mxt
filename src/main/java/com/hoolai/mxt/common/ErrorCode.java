@@ -18,6 +18,7 @@ public enum ErrorCode {
     ILLEGAL_USERNAME(1007, "账号输入不合法"),
     ILLEGAL_REALNAME(1008, "姓名输入不合法"),
     ILLEGAL_IDCARD(1009, "身份证输入不合法"),
+    NOT_ACCEPT_PROTOCOL(1010, "请先同意注册协议"),
     ;
 
     public int code;

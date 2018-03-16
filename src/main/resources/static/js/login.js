@@ -4,6 +4,7 @@ $(function () {
     $("#login-login").click(function () {
         var username = $("#login_input_name").val();
         var password = $("#login_input_passwd").val();
+        password = md5(password).toUpperCase();
         $.ajax({
             type: "POST",
             url: serverUrl + "user/login/",
