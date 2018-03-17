@@ -26,7 +26,7 @@ public class UserController {
     /** 登陆页面 */
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login() {
-        ModelAndView modelAndView = new ModelAndView("/user/login");
+        ModelAndView modelAndView = new ModelAndView("user/login");
         Util.addLocalInfo(modelAndView);
         return modelAndView;
     }
@@ -34,7 +34,7 @@ public class UserController {
     /** 协议页面 */
     @RequestMapping(value = "/checkProtocol", method = RequestMethod.GET)
     public ModelAndView checkProtocol() {
-        ModelAndView modelAndView = new ModelAndView("/user/checkProtocol");
+        ModelAndView modelAndView = new ModelAndView("user/checkProtocol");
         Util.addLocalInfo(modelAndView);
         return modelAndView;
     }
@@ -42,7 +42,7 @@ public class UserController {
     /** 注册页面 */
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public ModelAndView register(@RequestParam("accept") boolean accept) {
-        ModelAndView modelAndView = new ModelAndView("/user/register");
+        ModelAndView modelAndView = new ModelAndView("user/register");
         Util.addLocalInfo(modelAndView);
         modelAndView.addObject("accept", accept);
         return modelAndView;

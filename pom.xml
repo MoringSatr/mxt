@@ -5,7 +5,7 @@
 
     <groupId>com.hoolai</groupId>
     <artifactId>mxt</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1</version>
     <packaging>jar</packaging>
 
     <name>mxt</name>
@@ -96,7 +96,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-
     </build>
 
 </project>

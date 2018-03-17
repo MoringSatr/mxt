@@ -23,6 +23,8 @@ public class Constant {
 
     public static String GAME_URL;
 
+    public static String GAME_NAME;
+
     public static void load(String springProfiles) {
         try {
             Properties properties = new Properties();
@@ -41,6 +43,7 @@ public class Constant {
         SERVER_ID = Integer.parseInt(properties.getProperty("server_id"));
         IS_LOCAL = Boolean.parseBoolean(properties.getProperty("is_local"));
         GAME_URL = properties.getProperty("game_url");
+        GAME_NAME = properties.getProperty("game_name");
     }
 
 }

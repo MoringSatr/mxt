@@ -15,6 +15,8 @@ public class Util {
 
     public static void addLocalInfo(ModelAndView modelAndView) {
         modelAndView.addObject("serverUrl", Constant.SERVER_URL);
+        modelAndView.addObject("resources_url", Constant.RESOURCE_URL);
+        modelAndView.addObject("game_name", Constant.GAME_NAME);
     }
 
     /**

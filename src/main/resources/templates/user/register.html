@@ -2,17 +2,17 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
-    <title>马戏团</title>
+    <title th:text="${game_name}"></title>
     <link rel="canonical" href="http://"/>
     <meta name='robots' content='noindex,follow'/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <link rel="stylesheet" href="/css/main.css">
-    <script src="/js/jquery-1.9.1.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/md5.min.js"></script>
-    <script src="/js/register.js"></script>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <script th:src="@{/js/jquery-1.9.1.min.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+    <script th:src="@{/js/md5.min.js}"></script>
+    <script th:src="@{/js/register.js}"></script>
 </head>
 <body>
 <input type="hidden" id="serverUrl" th:value="${serverUrl}">
@@ -22,7 +22,7 @@
 <div id="page-register" class="page">
     <div class="header-container">
         <header class="wrapper clearfix">
-            <h1 class="title">马戏团</h1>
+            <h1 class="title" th:text="${game_name}"></h1>
         </header>
     </div>
     <div class="main-container">
