@@ -11,10 +11,11 @@
     <link rel="stylesheet" th:href="@{/css/main.css}">
     <script th:src="@{/js/jquery-1.9.1.min.js}"></script>
     <script th:src="@{/js/main.js}"></script>
-    <script th:src="@{/js/checkProtocol.js}"></script>
+    <script th:src="@{/js/advice.js}"></script>
 </head>
 <body>
-<input type="hidden" id="serverUrl" th:value="${serverUrl}">
+<input type="hidden" id="serverUrl" th:value="${serverUrl}"/>
+<input type="hidden" id="gameUrl" th:value="${gameUrl}"/>
 
 <!-- #page-register-protocol -->
 <div id="page-register-protocol" class="page">
@@ -32,16 +33,15 @@
             <aside>
                 <hr/>
                 <div>
-                    <div id="register-protocol-bg">
-                        <div class="login-font-title">
-                            <h1 class="title">注册协议</h1>
+                    <div class="page-health-notice">
+                        <div>
+                            健康游戏忠告
                         </div>
                         <div>
-                            <iframe th:src="@{/protocol/protocol.htm}" class="protocol-font-body"></iframe>
-                        </div>
-                        <div class="protocol-font-foot">
-                            <input type="button" id="register-protocol-agree" class="login-font-button login-font-button2 login-button" value="接 受">
-                            <input type="button" id="register-protocol-cancel" class="login-font-button login-font-button1 login-button" value="取 消">
+                            抵制不良游戏，拒绝盗版游戏。<br>
+                            注意自我保护，谨防受骗上当。<br>
+                            适度游戏益脑，沉迷游戏伤身。<br>
+                            合理安排时间，享受健康生活。
                         </div>
                     </div>
                 </div>

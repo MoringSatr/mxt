@@ -1,8 +1,5 @@
 package com.hoolai.mxt.controller;
 
-import com.hoolai.mxt.common.Util;
-import com.hoolai.mxt.service.UserService;
-import com.hoolai.mxt.vo.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +7,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.hoolai.mxt.common.Constant;
+import com.hoolai.mxt.common.Util;
+import com.hoolai.mxt.service.UserService;
+import com.hoolai.mxt.vo.ResultVo;
 
 /**
  * @author liubowen
@@ -45,6 +47,15 @@ public class UserController {
         ModelAndView modelAndView = new ModelAndView("user/register");
         Util.addLocalInfo(modelAndView);
         modelAndView.addObject("accept", accept);
+        return modelAndView;
+    }
+
+    /** 游戏忠告页面 */
+    @RequestMapping(value = "/advice", method = RequestMethod.GET)
+    public ModelAndView advice() {
+        ModelAndView modelAndView = new ModelAndView("user/advice");
+        Util.addLocalInfo(modelAndView);
+        modelAndView.addObject("gameUrl", Constant.GAME_URL);
         return modelAndView;
     }
 

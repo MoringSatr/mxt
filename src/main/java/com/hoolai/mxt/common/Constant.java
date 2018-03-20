@@ -25,6 +25,8 @@ public class Constant {
 
     public static String GAME_NAME;
 
+    public static String GAME_ICON_URL;
+
     public static void load(String springProfiles) {
         try {
             Properties properties = new Properties();
@@ -44,6 +46,7 @@ public class Constant {
         IS_LOCAL = Boolean.parseBoolean(properties.getProperty("is_local"));
         GAME_URL = properties.getProperty("game_url");
         GAME_NAME = properties.getProperty("game_name");
+        GAME_ICON_URL = properties.getProperty("game_icon_url");
     }
 
 }

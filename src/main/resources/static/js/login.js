@@ -29,9 +29,10 @@ $(function () {
                     $("#login_input_passwd").val("");
                     return;
                 }
-                var gameUrl = result.data.gameUrl;
-                //  进入游戏
-                location.href = gameUrl;
+                window.location.href = serverUrl + "user/advice/";
+                // var gameUrl = result.data.gameUrl;
+                // //  进入游戏
+                // location.href = gameUrl;
             }
         });
     });

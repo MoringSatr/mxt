@@ -196,14 +196,13 @@ h1, h2, h3, h4 {
 }
 
 #start-icon {
-    background: url(../img/icon-512.png) left top no-repeat;
-    width: 180px;
-    height: 180px;
+    /*background: url(../img/icon-512.png) left top no-repeat;*/
+    width: 150px;
+    height: 150px;
     background-size: 100% 100%;
     margin: 0 auto;
     position: relative;
     font-size: 1em;
-    margin-bottom: 1em;
 }
 
 #start-level {
@@ -775,11 +774,6 @@ and (orientation: landscape) {
         font-size: 12px;
     }
 
-    #start-icon {
-        margin-top: 10px;
-        /* float: right; */
-    }
-
     #start-btnPlay {
         margin-top: 60px;
     }
@@ -895,12 +889,6 @@ and (orientation: landscape) {
 
     .question-key:active {
         border-top-width: 3px;
-    }
-
-    #start-icon {
-        width: 320px;
-        height: 320px;
-        margin-bottom: 3em;
     }
 
     #start-level {

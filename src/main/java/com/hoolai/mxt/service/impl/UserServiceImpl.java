@@ -1,10 +1,5 @@
 package com.hoolai.mxt.service.impl;
 
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.hoolai.mxt.common.Constant;
 import com.hoolai.mxt.common.ErrorCode;
 import com.hoolai.mxt.common.TextFilter;
 import com.hoolai.mxt.common.idcard.IdCardValidator;
@@ -12,6 +7,9 @@ import com.hoolai.mxt.entity.User;
 import com.hoolai.mxt.repository.UserRepository;
 import com.hoolai.mxt.service.UserService;
 import com.hoolai.mxt.vo.ResultVo;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @author liubowen
@@ -41,7 +39,6 @@ public class UserServiceImpl implements UserService {
         if (!checkUsernameAndPassword) {
             return new ResultVo(ErrorCode.ERROR_PASSWORD);
         }
-        result.put("gameUrl", Constant.GAME_URL);
         return result;
     }
 
