@@ -30,9 +30,6 @@ $(function () {
                     return;
                 }
                 window.location.href = serverUrl + "user/advice/";
-                // var gameUrl = result.data.gameUrl;
-                // //  进入游戏
-                // location.href = gameUrl;
             }
         });
     });

@@ -27,6 +27,8 @@ public class Constant {
 
     public static String GAME_ICON_URL;
 
+    public static String GAME_PROTOCOL_URL;
+
     public static void load(String springProfiles) {
         try {
             Properties properties = new Properties();
@@ -47,6 +49,7 @@ public class Constant {
         GAME_URL = properties.getProperty("game_url");
         GAME_NAME = properties.getProperty("game_name");
         GAME_ICON_URL = properties.getProperty("game_icon_url");
+        GAME_PROTOCOL_URL = properties.getProperty("game_protocol_url");
     }
 
 }

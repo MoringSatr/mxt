@@ -18,6 +18,7 @@ public class Util {
         modelAndView.addObject("resources_url", Constant.RESOURCE_URL);
         modelAndView.addObject("game_name", Constant.GAME_NAME);
         modelAndView.addObject("game_icon_url", Constant.GAME_ICON_URL);
+        modelAndView.addObject("game_protocol_url", Constant.GAME_PROTOCOL_URL);
     }
 
     /**
